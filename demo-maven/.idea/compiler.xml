@@ -10,6 +10,7 @@
         <module name="maven_web" />
         <module name="maven_java" />
         <module name="maven_web_plugin" />
+        <module name="maven_son" />
       </profile>
     </annotationProcessing>
   </component>

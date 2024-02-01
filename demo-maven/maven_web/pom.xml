@@ -9,10 +9,13 @@
     <version>1.0-SNAPSHOT</version>
     <!-- 只需要改 packaging 就可以把java项目变成javaweb项目 -->
     <packaging>war</packaging>
+    <!--声明版本，在properties中管理版本是比较好的方法。-->
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--命名随便,内部制定版本号即可！-->
+        <junit.version>5.9.2</junit.version>
     </properties>
 
     <dependencies>
@@ -28,7 +31,7 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.2</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <!--构建命令之安装：可以依赖另一个工程-->
@@ -38,7 +41,6 @@
             <artifactId>maven_java</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
     </dependencies>
 
 
@@ -51,6 +53,20 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.2</version>
             </plugin>
+
+            <!-- tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8090</port>
+                    <path>/</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <server>tomcat7</server>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
