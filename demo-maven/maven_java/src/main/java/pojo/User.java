@@ -1,4 +1,4 @@
-package com.atguigu.maven.pojo;
+package pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
